@@ -5,7 +5,6 @@ void main()
 {
     int i, m;
     float x, sum=1, t=1;
-    clrscr();
      
     printf("Enter the value for x : ");
     scanf("%f", &x);
@@ -20,6 +19,6 @@ void main()
         sum=sum+t;
     }
      
-    printf("\nThe Exponential Value of %f = %.4f", x, sum);
+    printf("\nThe Exponential Value of %f = %.4f\n", x, sum);
     return;
 }
