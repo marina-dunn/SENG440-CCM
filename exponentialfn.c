@@ -1,24 +1,29 @@
-/* Program for Exponential Series */
-#include<stdio.h>
+#include <stdio.h>
+#include <math.h>
  
-void main()
+double main()
 {
-    int i, m;
-    float x, sum=1, t=1;
-     
-    printf("Enter the value for x : ");
-    scanf("%f", &x);
-     
-    printf("\nEnter the value for m : ");
-    scanf("%d", &m);
-     
+    int i, K = 10;
+    float M;
+    double res = 1.0, add, shift; 
+    double table[10] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+    printf("Please enter a number between 0 and 1: ");
+    scanf("%f", &M);
+    // Flood table with information required     
+    for(i=0; i <= (K-1); i++){
+        table[i] = log(1+pow(2, -i));
+    }
     /* Loop to calculate the value of Exponential */
-    for(i=1;i<=m;i++)
+    for(i=0;i<=(K-1);i++)
     {
-        t=t*x/i;
-        sum=sum+t;
+        add = M - table[i];
+        shift = res * (1+pow(2, -i));
+        if(add >= 0){
+            M = add;
+            res = shift;
+        }
     }
      
-    printf("\nThe Exponential Value of %f = %.4f\n", x, sum);
-    return;
+    printf("\nThe Exponential Value is = %.4f\n", res);
+    return res;
 }
