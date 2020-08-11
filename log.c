@@ -32,9 +32,9 @@ double main()
     /* Loop to calculate the value of Exponential */
     for(i=0;i<=(K-1);i++)
     {
-        add = MUL(m_fixed, DoubleToFixed((1+pow(2, -i))));
+        add = MUL(m_fixed, DoubleToFixed((1.0+pow(2, -i))));
         shift = res - table[i];
-        if(add <= DoubleToFixed(1);){
+        if(add <= DoubleToFixed(1)){
             m_fixed = add;
             res = shift;
         }
