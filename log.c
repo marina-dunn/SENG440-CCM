@@ -1,7 +1,4 @@
-#include<stdio.h>
- 
-void main()
-{
+
 
 #include <stdio.h>
 #include <math.h>
