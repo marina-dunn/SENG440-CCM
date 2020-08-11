@@ -1,5 +1,16 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdint.h>
+
+const int scale = 16;
+
+#define DoubleToFixed(x) (x * (double)(1<<scale)) 
+#define FixedToDouble(x) ((double)x / (double)(1<<scale))
+
+#define MUL(x,y) ((((x)>>4)*((y)>>4))>>8)
+#define DIV(x,y) (((x)<<8)/(y)<<8)
+
+typedef int12_t ;
  
 double main()
 {
