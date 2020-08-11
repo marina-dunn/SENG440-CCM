@@ -28,7 +28,7 @@ double main()
     /* Loop to calculate the value of Exponential */
     for(i=0;i<=(K-1);i++)
     {
-        add = M * (1+pow(2, -i));
+        add = MUL(M, DoubleToFixed((1+pow(2, -i))));
         shift = res - table[i];
         if(add <= 1){
             M = add;
