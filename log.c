@@ -28,7 +28,7 @@ double main()
         
     for(i=0; i <= (K-1); i++){
         table[i] = DoubleToFixed(log(1+pow(2, -i)));
-         printf(" table location %f, value:  %f",i,table[i] );
+         printf(" table location %i, value:  %f",i,table[i] );
     }
    
     for(i=0;i<=(K-1);i++)
