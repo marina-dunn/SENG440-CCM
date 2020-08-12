@@ -10,8 +10,6 @@ const int scale = 16;
 #define MUL(x,y) ((((x)>>4)*((y)>>4))>>8)
 #define DIV(x,y) (((x)<<8)/(y)<<8)
 
-typedef int12_t ;
- 
 double main()
 {
     int i, K = 10;
@@ -27,11 +25,12 @@ double main()
     // Flood table with information required     
     for(i=0; i <= (K-1); i++){
         table[i] = DoubleToFixed(log(1+pow(2, -i)));
+        printf("%d :: %f\n", table[i], log(1+pow(2, -i)));
     }
     /* Loop to calculate the value of Exponential */
     for(i=0;i<=(K-1);i++)
     {
-        int temp = DoubleToFixed((1.0+pow(2, -i)));
+        int temp = DoubleToFixed((1+pow(2, -i)));
         add = M - table[i];
         shift = MUL(res, temp);
         if(add >= DoubleToFixed(0)){

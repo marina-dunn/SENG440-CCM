@@ -30,7 +30,7 @@ Then in order to execute the file, it's a whole process.
 - Login using netlink credentials. 
 - Go to location of exe file
 
-    `lftp user1@arm`
+    `lftp user1@arm` -- password = q6coHjd7P
 
     `put file.exe`
 
