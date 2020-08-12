@@ -25,11 +25,12 @@ double main()
     scanf("%f", &M);
     int m_fixed = DoubleToFixed(M);
     
-    // Flood table with information required     
+        
     for(i=0; i <= (K-1); i++){
         table[i] = DoubleToFixed(log(1+pow(2, -i)));
+         printf(" table location %f, value:  %f",i,table[i] );
     }
-    /* Loop to calculate the value of Exponential */
+   
     for(i=0;i<=(K-1);i++)
     {
         int temp = DoubleToFixed((1.0+pow(2, -i)));
