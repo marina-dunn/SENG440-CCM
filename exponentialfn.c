@@ -25,16 +25,15 @@ double main()
     // Flood table with information required     
     for(i=0; i <= (K-1); i++){
         table[i] = DoubleToFixed(log(1+pow(2, -i)));
-        printf("%d :: %f\n", table[i], log(1+pow(2, -i)));
     }
     /* Loop to calculate the value of Exponential */
     for(i=0;i<=(K-1);i++)
     {
         int temp = DoubleToFixed((1+pow(2, -i)));
-        add = M - table[i];
+        add = m_fixed - table[i];
         shift = MUL(res, temp);
         if(add >= DoubleToFixed(0)){
-            M = add;
+            m_fixed = add;
             res = shift;
         }
     }
