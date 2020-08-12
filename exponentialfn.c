@@ -16,25 +16,30 @@ double main()
 {
     int i, K = 10;
     float M;
-    double res = 1.0, add, shift; 
-    double table[10] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
+    int res = DoubleToFixed(1), add, shift; 
+    int table[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
     printf("Please enter a number between 0 and 1: ");
     scanf("%f", &M);
+    int m_fixed = DoubleToFixed(M);
+
     // Flood table with information required     
     for(i=0; i <= (K-1); i++){
-        table[i] = log(1+pow(2, -i));
+        table[i] = DoubleToFixed(log(1+pow(2, -i)));
     }
     /* Loop to calculate the value of Exponential */
     for(i=0;i<=(K-1);i++)
     {
+        int temp = DoubleToFixed((1.0+pow(2, -i)));
         add = M - table[i];
-        shift = res * (1+pow(2, -i));
-        if(add >= 0){
+        shift = MUL(res, temp);
+        if(add >= DoubleToFixed(0)){
             M = add;
             res = shift;
         }
     }
      
-    printf("\nThe Exponential Value is = %.4f\n", res);
-    return res;
+    printf("\nThe Exponential Value is = %.4f\n", FixedToDouble(res));
+    return FixedToDouble(res);
 }
