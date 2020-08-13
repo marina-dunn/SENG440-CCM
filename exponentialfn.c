@@ -33,7 +33,7 @@ double main()
         int temp = DoubleToFixed((1+pow(2, -i)));
         add = m_fixed - table[i];
         shift = MUL(res, temp);
-        add <= x ? m_fixed = add, res = shift : NULL;
+        add >= x ? m_fixed = add, res = shift : NULL;
         /* if(add >= DoubleToFixed(0)){
             m_fixed = add;
             res = shift;
