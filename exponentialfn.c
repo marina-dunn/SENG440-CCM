@@ -25,9 +25,9 @@ double exponential(int table[10]){
         int temp = DoubleToFixed((1+pow(2, -i)));
         add = m_fixed - table[i];
         shift = MUL(res, temp);
-        add >= x ? m_fixed = add, res = shift : NULL;
+        add >= x ? m_fixed = add, res = shift : 0;
     }
-    return FixedToDouble(res)
+    return FixedToDouble(res);
 }
 int main()
 {
