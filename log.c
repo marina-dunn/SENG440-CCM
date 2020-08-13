@@ -52,7 +52,7 @@ double main()
         table[i] = DoubleToFixed(log(1+pow(2, -i)));
          printf(" table location %d, value:  %d \n",i,table[i] );
     }
-    Log(table);
+    
         /*
         asm ("cmp %2, %3 ; movle %0, %2; movle %1, %4;" 
              : "=r"(m_fixed), "=r"(res) 
@@ -60,6 +60,6 @@ double main()
        */   
     
 
-    printf("\nThe log Value is = %.4f\n", FixedToDouble(res));
+    printf("\nThe log Value is = %.4f\n", Log(table););
     return 0;
 }
