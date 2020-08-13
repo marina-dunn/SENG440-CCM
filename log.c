@@ -60,6 +60,6 @@ int main()
        */   
     
 
-    printf("\nThe log Value is = %.4f\n", Log(table););
+    printf("\nThe log Value is = %.4f\n", Log(table));
     return 0;
 }
