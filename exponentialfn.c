@@ -37,7 +37,9 @@ double main()
             m_fixed = add;
             res = shift;
         } */ 
-        asm ("cmp %3, %2 ; movls %2, %0; movls %4, %1;" : "=r"(m_fixed), "=r"(res) : "r"(add), "r"(x) , "r"(shift));
+        printf("res: %d -- m: %d -- add: %d -- shift: %d", res, m_fixed, add, shift);
+        asm ("cmp %3, %2 ; movlt %2, %0; movlt %4, %1;" : "=r"(m_fixed), "=r"(res) : "r"(add), "r"(x) , "r"(shift));
+        printf("res: %d -- m: %d -- add: %d -- shift: %d", res, m_fixed, add, shift);
     }
      
     printf("\nThe Exponential Value is = %.4f\n", FixedToDouble(res));
