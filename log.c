@@ -41,9 +41,18 @@ double main()
             m_fixed = add;
             res = shift;
         */
+        add <= x ? m_fixed = add, res = shift : ;
+        /*
+        asm ("cmp %2, %3 ; movle %0, %2; movle %1, %4;" 
+             : "=r"(m_fixed), "=r"(res) 
+             : "r"(add), "r"(x) , "r"(shift));  
+       */
+       /*
         asm ("cmp %0, %1" :: "r"(add), "r"(x));    
         asm ("movle %0, %1" : "=r"(m_fixed): "r"(add));
         asm ("movle %0, %1": "=r"(res): "r"(shift));
+       */
+
 /*
   asm ("cmp %2 %3 ;
   movle %3 %0;
