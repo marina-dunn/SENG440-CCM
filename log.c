@@ -24,7 +24,7 @@ double main()
     printf("Please enter a number between .5 and 1: ");
     scanf("%f", &M);
     int m_fixed = DoubleToFixed(M);
-    x = DoubleToFixed(1);
+    int x = DoubleToFixed(1);
 
     for(i=0; i <= (K-1); i++){
         table[i] = DoubleToFixed(log(1+pow(2, -i)));
