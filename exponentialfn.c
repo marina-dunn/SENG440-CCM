@@ -33,13 +33,14 @@ double main()
         int temp = DoubleToFixed((1+pow(2, -i)));
         add = m_fixed - table[i];
         shift = MUL(res, temp);
+        add <= x ? m_fixed = add, res = shift : NULL;
         /* if(add >= DoubleToFixed(0)){
             m_fixed = add;
             res = shift;
         } */ 
-        printf("BEFORE= res: %d -- m: %d -- add: %d -- shift: %d\n", res, m_fixed, add, shift);
-        asm ("cmp %3, %2 ; movlt %2, %0; movlt %4, %1;" : "=r"(m_fixed), "=r"(res) : "r"(add), "r"(x) , "r"(shift));
-        printf("AFTER= res: %d -- m: %d -- add: %d -- shift: %d\n", res, m_fixed, add, shift);
+        // printf("BEFORE= res: %d -- m: %d -- add: %d -- shift: %d\n", res, m_fixed, add, shift);
+        // asm ("cmp %3, %2 ; movge %2, %0; movge %4, %1;" : "=r"(m_fixed), "=r"(res) : "r"(add), "r"(x) , "r"(shift));
+        // printf("AFTER= res: %d -- m: %d -- add: %d -- shift: %d\n", res, m_fixed, add, shift);
     }
      
     printf("\nThe Exponential Value is = %.4f\n", FixedToDouble(res));
