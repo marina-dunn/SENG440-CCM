@@ -35,7 +35,7 @@ double Log(int table[10]){
             m_fixed = add;
             res = shift;
         */
-        add <= x ? m_fixed = add, res = shift : ;
+        add <= x ? m_fixed = add, res = shift : 0;
     }
     return FixedToDouble(res);
 }
