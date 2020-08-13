@@ -32,10 +32,7 @@ double exponential(int table[10]){
 int main()
 {
     int i;
-
     int table[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-
-    // Flood table with information required     
     for(i=0; i <= (K-1); i++){
         table[i] = DoubleToFixed(log(1+pow(2, -i)));
     }
