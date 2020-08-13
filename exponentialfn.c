@@ -21,6 +21,7 @@ double main()
     printf("Please enter a number between 0 and 1: ");
     scanf("%f", &M);
     int m_fixed = DoubleToFixed(M);
+    int x = DoubleToFixed(0.0);
 
     // Flood table with information required     
     for(i=0; i <= (K-1); i++){
@@ -32,10 +33,11 @@ double main()
         int temp = DoubleToFixed((1+pow(2, -i)));
         add = m_fixed - table[i];
         shift = MUL(res, temp);
-        if(add >= DoubleToFixed(0)){
+        /* if(add >= DoubleToFixed(0)){
             m_fixed = add;
             res = shift;
-        }
+        } */ 
+        asm ("cmp %3, %2 ; movls %2, %0; movls %4, %1;" : "=r"(m_fixed), "=r"(res) : "r"(add), "r"(x) , "r"(shift));
     }
      
     printf("\nThe Exponential Value is = %.4f\n", FixedToDouble(res));
