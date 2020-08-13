@@ -37,7 +37,7 @@ double main()
         add = MUL(m_fixed, temp);
         shift = res - table[i];
 
-        asm ("cmp %2, %3 ; movle %2, %0; movle %4, %1;" : "=r"(m_fixed), "=r"(res) : "r"(add), "r"(x) , "r"(shift));    
+        asm ("cmp %2, %3 ; movle %0, %2; movle %1, %4;" : "=r"(m_fixed), "=r"(res) : "r"(add), "r"(x) , "r"(shift));    
         
 /*
   asm ("cmp %2 %3 ;
