@@ -24,7 +24,7 @@ double main()
     printf("Please enter a number between .5 and 1: ");
     scanf("%f", &M);
     int m_fixed = DoubleToFixed(M);
-
+    x = DoubleToFixed(1);
 
     for(i=0; i <= (K-1); i++){
         table[i] = DoubleToFixed(log(1+pow(2, -i)));
@@ -36,10 +36,19 @@ double main()
         int temp = DoubleToFixed((1.0+pow(2, -i)));
         add = MUL(m_fixed, temp);
         shift =  - table[i];
-        if(add <= DoubleToFixed(1)){
-            m_fixed = add;
-            res  = shift;
-        }
+        asm ("cmp %2 %3 ; movle %3 %0; movle %4 %1;" : "=r"(m_fixed), "=r"(res) : "r"(add), "r"(x) , "r"(shift));    
+        
+/*
+  asm ("cmp %2 %3 ;
+  movle %3 %0;
+  movle %4 %1;
+  "  : "=r"(m_fixed), "=r"(res) : "r"(add), "r"(x) , "r"(shift));     
+        */
+        
+            
+          
+        
+        
     }
 
     printf("\nThe log Value is = %.4f\n", FixedToDouble(res));
