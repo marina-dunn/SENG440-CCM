@@ -58,7 +58,7 @@ double main()
              : "=r"(m_fixed), "=r"(res) 
              : "r"(add), "r"(x) , "r"(shift));  
        */   
-    }
+    
 
     printf("\nThe log Value is = %.4f\n", FixedToDouble(res));
     return 0;
